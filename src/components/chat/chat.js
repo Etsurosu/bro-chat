@@ -1,59 +1,69 @@
 import React from "react";
+import ChatContainer from "./components/chat-container";
+import OutputContainer from "./components/output-container";
+import InputContainer from "./components/input-container";
+import MessageContainer from "./components/message-container";
 
-const Chat = ({ messages }) => (
-  <div
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      borderRadius: 30,
-      overflow: "hidden",
-      width: "80vw",
-      height: "80vh"
-    }}
-  >
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column-reverse",
-        backgroundColor: "white",
-        height: "100%",
-        padding: 10,
-        overflow: "scroll",
-        overflowX: "hidden",
-        marginRight: -17
-      }}
-    >
-      {messages.reverse().map(message => (
-        <div
-          style={{
-            margin: 1,
-            paddingLeft: 10,
-            paddingRight: 10,
-            borderRadius: 12,
-            backgroundColor: "#E8E8E8",
-            wordWrap: "break-word",
-            width: "auto"
-          }}
-        >
-          {message.username} : {message.content}
-        </div>
-      ))}
-    </div>
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        height: 100,
-        backgroundColor: "grey"
-      }}
-    >
-      <input type="text" style={{ height: "80%", width: "80%" }}></input>
-      <input
-        type="button"
-        style={{ height: "80%", width: "18%", padding: 0, margin: 0 }}
-      />
-    </div>
-  </div>
-);
+class Chat extends React.Component {
+  constructor(props) {
+    super(props);
 
+    this.state = { username: "Adri", messages: [], inputText: "" };
+  }
+
+  handleChange(e) {
+    console.log(e.target.value);
+    this.setState({ inputText: e.target.value });
+  }
+
+  handleClick() {
+    //call API a la place de ca
+    const { messages, inputText, username } = this.state;
+    this.setState({
+      messages: [{ username, content: inputText }, ...messages],
+      inputText: ""
+    });
+  }
+
+  handleKeyDown(e) {
+    if (e.key === "Enter") this.handleClick();
+  }
+
+  render() {
+    const { messages, inputText } = this.state;
+    return (
+      <ChatContainer onKeyDown={e => this.handleKeyDown(e)}>
+        <OutputContainer>
+          {messages.map(message => (
+            <MessageContainer>
+              {message.username} : {message.content}
+            </MessageContainer>
+          ))}
+        </OutputContainer>
+        <InputContainer>
+          <input
+            type="text"
+            value={inputText}
+            onChange={e => this.handleChange(e)}
+            style={{
+              width: "80%",
+              marginRight: 10,
+              borderRadius: 10,
+              padding: 5
+            }}
+          ></input>
+          <input
+            type="button"
+            onClick={() => this.handleClick()}
+            style={{
+              width: "15%",
+              padding: 5,
+              borderRadius: 10
+            }}
+          />
+        </InputContainer>
+      </ChatContainer>
+    );
+  }
+}
 export default Chat;
