@@ -8,7 +8,12 @@ class Chat extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { username: "Adri", messages: [], inputText: "" };
+    this.state = {
+      username: "Adri",
+      messages: [],
+      inputText: "",
+      selectedColour: "#000000"
+    };
   }
 
   handleChange(e) {
@@ -19,14 +24,20 @@ class Chat extends React.Component {
   handleClick() {
     //call API a la place de ca
     const { messages, inputText, username } = this.state;
-    this.setState({
-      messages: [{ username, content: inputText }, ...messages],
-      inputText: ""
-    });
+    if (inputText !== "")
+      this.setState({
+        messages: [{ username, content: inputText }, ...messages],
+        inputText: ""
+      });
   }
 
   handleKeyDown(e) {
     if (e.key === "Enter") this.handleClick();
+  }
+
+  handleColorWheel() {
+    const { isColourWheelShowed } = this.state;
+    this.setState({ isColourWheelShowed: !isColourWheelShowed });
   }
 
   render() {
@@ -42,6 +53,16 @@ class Chat extends React.Component {
         </OutputContainer>
         <InputContainer>
           <input
+            type="button"
+            onClick={() => this.handleColourWheel()}
+            value="Envoyer"
+            style={{
+              width: "15%",
+              padding: 5,
+              borderRadius: 10
+            }}
+          />
+          <input
             type="text"
             value={inputText}
             onChange={e => this.handleChange(e)}
@@ -55,6 +76,7 @@ class Chat extends React.Component {
           <input
             type="button"
             onClick={() => this.handleClick()}
+            value="Envoyer"
             style={{
               width: "15%",
               padding: 5,
