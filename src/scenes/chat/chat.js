@@ -21,7 +21,7 @@ class Chat extends React.Component {
       messages: [],
       inputText: "",
       isColorpickerShowed: false,
-      selectedColor: "blue"
+      selectedColor: "#333333"
     };
   }
 
@@ -85,6 +85,7 @@ class Chat extends React.Component {
             icon={faPalette}
             onClick={() => this.handleColorpickerClick()}
             cursor="pointer"
+            color={selectedColor}
           />
           <input
             type="text"
@@ -103,10 +104,12 @@ class Chat extends React.Component {
             icon={faPaperPlane}
             onClick={() => this.handleClick()}
             cursor="pointer"
+            color={selectedColor}
           />
         </InputContainer>
       </ChatContainer>
     );
   }
 }
+
 export default Chat;

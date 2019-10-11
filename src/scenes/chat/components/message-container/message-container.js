@@ -8,7 +8,7 @@ const MessageContainer = styled(Container)`
   border-radius: 12px;
   margin: 1px;
   word-wrap: break-word;
-  background-color: #e8e8e8;
+  background-color: #cccccc;
 `;
 
 export default MessageContainer;

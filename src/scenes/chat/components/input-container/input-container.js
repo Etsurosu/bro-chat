@@ -6,7 +6,7 @@ const InputContainer = styled(Container)`
   justify-content: center;
   align-items: center;
   background-color: grey;
-  padding: 5px 20px 5px 20px;
+  padding: 7px 20px 7px 20px;
 `;
 
 export default InputContainer;

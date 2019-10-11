@@ -4,9 +4,8 @@ import Container from "../../../../components/container";
 const ChatContainer = styled(Container)`
   display: flex;
   flex-direction: column;
-  width: 80vw;
-  height: 80vh;
-  border-radius: 20px;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 `;
 
