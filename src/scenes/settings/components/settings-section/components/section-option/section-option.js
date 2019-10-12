@@ -1,12 +1,12 @@
 import React from "react";
+import Switch from "react-switch";
 import OptionContainer from "./components/option-container";
 import OptionTitle from "./components/option-title";
-import OptionSwitch from "./components/option-switch";
 
 const SectionOption = ({ title }) => (
   <OptionContainer>
     <OptionTitle>{title}</OptionTitle>
-    <OptionSwitch />
+    <Switch />
   </OptionContainer>
 );
 
