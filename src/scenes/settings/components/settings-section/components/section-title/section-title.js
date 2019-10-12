@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const SectionTitle = styled.h2`
-  margin-top: 20px;
   border-bottom: 1px solid #e8e8e8;
 `;
 
