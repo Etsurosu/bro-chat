@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCog, faUserAlt } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCog,
+  faUserAlt,
+  faSignInAlt
+} from "@fortawesome/free-solid-svg-icons";
 import CoreContainer from "./components/core-container";
 import Header from "./components/header";
 import Body from "./components/body";
 
-const Core = ({ children }) => (
+const Core = ({ isConnected, children }) => (
   <CoreContainer>
     <Header>
       <Link
@@ -22,9 +26,15 @@ const Core = ({ children }) => (
       >
         BROCHAT
       </Link>
-      <Link to="/me" style={{ height: 100 }}>
-        <FontAwesomeIcon icon={faUserAlt} color="#e8e8e8" size="3x" />
-      </Link>
+      {(isConnected && (
+        <Link to="/me" style={{ height: 100 }}>
+          <FontAwesomeIcon icon={faUserAlt} color="#e8e8e8" size="3x" />
+        </Link>
+      )) || (
+        <Link to="/login" style={{ height: 100 }}>
+          <FontAwesomeIcon icon={faSignInAlt} color="#e8e8e8" size="3x" />
+        </Link>
+      )}
       <Link
         style={{
           position: "absolute",

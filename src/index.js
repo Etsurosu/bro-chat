@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Core from "./components/core";
 import Chat from "./scenes/chat";
+import Login from "./scenes/login";
 import Profile from "./scenes/profile";
 import Settings from "./scenes/settings";
 
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Core>
         <Switch>
           <Route exact path="/" component={Chat} />
+          <Route exact path="/login" component={Login} />
           <Route exact path="/me" component={Profile} />
           <Route exact path="/settings" component={Settings} />
         </Switch>
