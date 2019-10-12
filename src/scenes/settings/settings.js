@@ -8,15 +8,15 @@ const Settings = () => (
     <SettingsSection
       title="Langue"
       options={[
-        { name: "Francais", onClick: () => console.log("fr") },
-        { name: "English", onClick: () => console.log("en") }
+        { title: "Francais", onClick: () => console.log("fr") },
+        { title: "English", onClick: () => console.log("en") }
       ]}
     />
     <SettingsSection
       title="Theme"
       options={[
-        { name: "Bleu", onClick: () => console.log("bleu") },
-        { name: "Rouge", onClick: () => console.log("rouge") }
+        { title: "Bleu", onClick: () => console.log("bleu") },
+        { title: "Rouge", onClick: () => console.log("rouge") }
       ]}
     />
   </SettingsContainer>
