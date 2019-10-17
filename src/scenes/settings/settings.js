@@ -1,11 +1,10 @@
 import React from "react";
-import SettingsContainer from "./components/settings-container";
+import ContentPage from "../../components/content-page";
 import SectionsContainer from "./components/sections-container";
 import SettingsSection from "./components/settings-section";
 
 const Settings = () => (
-  <SettingsContainer>
-    <h1>Settings</h1>
+  <ContentPage title="Settings">
     <SectionsContainer>
       <SettingsSection
         title="Langue"
@@ -22,7 +21,7 @@ const Settings = () => (
         ]}
       />
     </SectionsContainer>
-  </SettingsContainer>
+  </ContentPage>
 );
 
 export default Settings;

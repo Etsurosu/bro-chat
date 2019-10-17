@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Core from "./components/core";
 import Chat from "./scenes/chat";
 import Login from "./scenes/login";
+import Register from "./scenes/register";
 import Profile from "./scenes/profile";
 import Settings from "./scenes/settings";
 
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Switch>
           <Route exact path="/" component={Chat} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
           <Route exact path="/me" component={Profile} />
           <Route exact path="/settings" component={Settings} />
         </Switch>
@@ -30,9 +32,3 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-
-/** 
- * 
-import Auth from "./scenes/auth";
-import Profile from "./scenes/profile"; <Route exact path="/auth" component={Auth} />
-        <Route exact path="/me" component={Profile} /> */
