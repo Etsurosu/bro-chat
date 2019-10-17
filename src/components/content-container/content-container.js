@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Container from "../../../../components/container";
+import Container from "../container";
 
-const LoginContainer = styled(Container)`
+const ContentContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,4 +12,4 @@ const LoginContainer = styled(Container)`
   background-color: white;
 `;
 
-export default LoginContainer;
+export default ContentContainer;
