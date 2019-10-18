@@ -9,6 +9,7 @@ const MessageContainer = styled(Container)`
   margin: 1px;
   word-wrap: break-word;
   background-color: #cccccc;
+  color: ${props => props.color};
 `;
 
 export default MessageContainer;
