@@ -9,7 +9,7 @@ import Label from "../../components/label";
 const Login = () => (
   <ContentPage title="Connexion">
     <ContentContainer>
-      <BroInput label="mail" placeholder="mail" />
+      <BroInput label="nickname" placeholder="nickname" />
       <BroInput label="password" placeholder="password" />
       <Button>
         <Label style={{ color: "#333333", fontSize: 20, fontWeight: "bold" }}>

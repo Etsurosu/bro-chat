@@ -26,7 +26,7 @@ const Core = ({ isConnected, children }) => (
       >
         BROCHAT
       </Link>
-      {(isConnected && (
+      {(!isConnected && (
         <Link to="/me" style={{ height: 100 }}>
           <FontAwesomeIcon icon={faUserAlt} color="#e8e8e8" size="3x" />
         </Link>

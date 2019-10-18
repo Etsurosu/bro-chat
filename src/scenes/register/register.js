@@ -8,7 +8,7 @@ import Label from "../../components/label";
 const Register = () => (
   <ContentPage title="Register">
     <ContentContainer>
-      <BroInput label="mail" placeholder="mail" />
+      <BroInput label="nickname" placeholder="nickname" />
       <BroInput label="password" placeholder="password" />
       <Button>
         <Label style={{ color: "#333333", fontSize: 20, fontWeight: "bold" }}>
