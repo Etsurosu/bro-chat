@@ -1,7 +1,7 @@
-import React from "react";
-import BroInputContainer from "./components/bro-input-container";
-import Label from "../label";
-import Input from "../input";
+import React from 'react';
+import BroInputContainer from './components/bro-input-container';
+import Label from '../label';
+import Input from '../input';
 
 const BroInput = ({ label, placeholder }) => (
   <BroInputContainer>

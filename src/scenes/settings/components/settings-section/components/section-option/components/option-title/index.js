@@ -1,3 +1,3 @@
-import OptionTitle from "./option-title";
+import OptionTitle from './option-title';
 
 export default OptionTitle;

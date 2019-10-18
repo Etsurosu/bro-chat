@@ -1,3 +1,3 @@
-import Body from "./body";
+import Body from './body';
 
 export default Body;

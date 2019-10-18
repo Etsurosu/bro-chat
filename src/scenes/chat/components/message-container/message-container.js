@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Container from "../../../../components/container";
+import styled from 'styled-components';
+import Container from '../../../../components/container';
 
 const MessageContainer = styled(Container)`
   width: fit-content;

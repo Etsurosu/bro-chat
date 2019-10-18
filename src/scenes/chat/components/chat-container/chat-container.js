@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Container from "../../../../components/container";
+import styled from 'styled-components';
+import Container from '../../../../components/container';
 
 const ChatContainer = styled(Container)`
   display: flex;

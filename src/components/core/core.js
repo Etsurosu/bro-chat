@@ -1,30 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCog,
-  faUserAlt,
-  faSignInAlt
-} from "@fortawesome/free-solid-svg-icons";
-import CoreContainer from "./components/core-container";
-import Header from "./components/header";
-import Body from "./components/body";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog, faUserAlt, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import CoreContainer from './components/core-container';
+import Header from './components/header';
+import Body from './components/body';
 
 const Core = ({ isConnected, children }) => (
   <CoreContainer>
     <Header>
-      <Link
-        to="/"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          textDecoration: "none",
-          fontWeight: "bold",
-          color: "#e8e8e8",
-          height: 100
-        }}
-      >
-        BROCHAT
+      {/*HeaderSection 100px height component*/}
+      <Link to="/" style={{ marginTop: 40, marginBottom: 40, textDecoration: 'none' }}>
+        <b style={{ color: '#e8e8e8' }}>BROCHAT</b>
       </Link>
       {(!isConnected && (
         <Link to="/me" style={{ height: 100 }}>
@@ -37,9 +24,9 @@ const Core = ({ isConnected, children }) => (
       )}
       <Link
         style={{
-          position: "absolute",
-          display: "flex",
-          alignItems: "center",
+          position: 'absolute',
+          display: 'flex',
+          alignItems: 'center',
           height: 100,
           bottom: 0
         }}

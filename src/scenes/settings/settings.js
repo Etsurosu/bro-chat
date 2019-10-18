@@ -1,7 +1,7 @@
-import React from "react";
-import ContentPage from "../../components/content-page";
-import SectionsContainer from "./components/sections-container";
-import SettingsSection from "./components/settings-section";
+import React from 'react';
+import ContentPage from '../../components/content-page';
+import SectionsContainer from './components/sections-container';
+import SettingsSection from './components/settings-section';
 
 const Settings = () => (
   <ContentPage title="Settings">
@@ -9,15 +9,15 @@ const Settings = () => (
       <SettingsSection
         title="Langue"
         options={[
-          { title: "Francais", onClick: () => console.log("fr") },
-          { title: "English", onClick: () => console.log("en") }
+          { title: 'Francais', onClick: () => console.log('fr') },
+          { title: 'English', onClick: () => console.log('en') }
         ]}
       />
       <SettingsSection
         title="Theme"
         options={[
-          { title: "Bleu", onClick: () => console.log("bleu") },
-          { title: "Rouge", onClick: () => console.log("rouge") }
+          { title: 'Bleu', onClick: () => console.log('bleu') },
+          { title: 'Rouge', onClick: () => console.log('rouge') }
         ]}
       />
     </SectionsContainer>

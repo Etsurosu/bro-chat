@@ -1,3 +1,3 @@
-import ContentPageContainer from "./content-page-container";
+import ContentPageContainer from './content-page-container';
 
 export default ContentPageContainer;
