@@ -9,7 +9,6 @@ import InputContainer from './components/input-container';
 import MessageContainer from './components/message-container';
 
 // functionnal use hooks
-// faire une page profil
 // i18n
 // proptypes
 
@@ -30,11 +29,11 @@ const Chat = () => {
   return (
     <ChatContainer onKeyDown={e => e.key === 'Enter' && handleSubmit()}>
       <OutputContainer>
-        {messages.map(message => {
-          const toPrint = `${message.username} : ${message.content}`;
-
-          return <MessageContainer color={message.color}>{toPrint}</MessageContainer>;
-        })}
+        {messages.map(message => (
+          <MessageContainer color={message.color}>
+            {`${message.username} : ${message.content}`}
+          </MessageContainer>
+        ))}
       </OutputContainer>
       {isColorpickerShowed && (
         <HuePicker width="100%" color={color} onChange={newColor => setColor(newColor.hex)} />

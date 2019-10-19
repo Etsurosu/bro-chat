@@ -3,6 +3,8 @@ import ContentPage from '../../components/content-page';
 import SectionsContainer from './components/sections-container';
 import SettingsSection from './components/settings-section';
 
+/** make it wirk nicely i18n + redux */
+
 const Settings = () => (
   <ContentPage title="Settings">
     <SectionsContainer>

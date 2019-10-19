@@ -10,6 +10,7 @@ const Register = () => (
     <ContentContainer>
       <BroInput label="nickname" placeholder="nickname" />
       <BroInput label="password" placeholder="password" />
+      {/** do something to this Button */}
       <Button>
         <Label style={{ color: '#333333', fontSize: 20, fontWeight: 'bold' }}>Go</Label>
       </Button>

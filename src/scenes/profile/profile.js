@@ -10,8 +10,11 @@ const Auth = () => (
     <ContentContainer>
       <BroInput label="nickname" placeholder="nickname" />
       <BroInput label="password" placeholder="password" />
+      {/** do something to this Button */}
       <Button>
-        <Label style={{ color: '#333333', fontSize: 20, fontWeight: 'bold' }}>Update</Label>
+        <Label style={{ color: '#333333', fontSize: 20 }}>
+          <b>Update</b>
+        </Label>
       </Button>
     </ContentContainer>
   </ContentPage>
