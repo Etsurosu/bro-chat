@@ -7,7 +7,7 @@ const CoreContainer = styled(Container)`
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: #e8e8e8;
+  background-color: ${props => props.theme.default.primaryColor};
 `;
 
 export default CoreContainer;
