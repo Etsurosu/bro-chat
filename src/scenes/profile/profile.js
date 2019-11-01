@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserEdit, faUserCheck, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import IconContainer from '../../components/icon-container';
+import ClickableIcon from '../../components/clickable-icon';
 import ContentPage from '../../components/content-page';
 import ContentContainer from '../../components/content-container';
-import ProfileIconContainer from './components/profile-icon-container';
 import BroInput from '../../components/bro-input';
 
 // remove the test values
@@ -35,16 +35,16 @@ const Auth = ({ defaultUsername = 'Adrien', defaultPassword = 'test', signOut })
           disabled={editModeDisabled}
         />
         {/** do something to this Button */}
-        <ProfileIconContainer>
+        <IconContainer>
           {(editModeDisabled && (
             <>
-              <FontAwesomeIcon
+              <ClickableIcon
                 icon={faUserEdit}
                 color="#cccccc"
                 size="3x"
                 onClick={() => setEditModeDisabled(false)}
               />
-              <FontAwesomeIcon
+              <ClickableIcon
                 icon={faSignOutAlt}
                 color="#cccccc"
                 size="3x"
@@ -52,14 +52,14 @@ const Auth = ({ defaultUsername = 'Adrien', defaultPassword = 'test', signOut })
               />
             </>
           )) || (
-            <FontAwesomeIcon
+            <ClickableIcon
               icon={faUserCheck}
               color="#cccccc"
               size="3x"
               onClick={() => setEditModeDisabled(true)}
             />
           )}
-        </ProfileIconContainer>
+        </IconContainer>
       </ContentContainer>
     </ContentPage>
   );

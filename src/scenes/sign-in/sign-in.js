@@ -2,10 +2,13 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserPlus, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import IconContainer from '../../components/icon-container';
+import ClickableIcon from '../../components/clickable-icon';
 import ContentPage from '../../components/content-page';
 import ContentContainer from '../../components/content-container';
 import BroInput from '../../components/bro-input';
-import Button from '../../components/button';
 
 const SignIn = ({ signIn }) => {
   const { t } = useTranslation();
@@ -28,33 +31,17 @@ const SignIn = ({ signIn }) => {
           value={password}
           onChangeText={setPassword}
         />
-        <Button
-          style={{ color: '#333333', fontSize: 20 }}
-          onClick={() => signIn({ username, password })}
-        >
-          <b>{t('login.login')}</b>
-        </Button>
-        {/** do something to this ugly Link */}
-        <Link
-          to="/register"
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: 20,
-            border: '2px solid #666666',
-            backgroundColor: '#cccccc',
-            borderRadius: 20,
-            height: 35,
-            width: '100%',
-            maxWidth: 200,
-            color: '#333333',
-            fontSize: 20,
-            textDecoration: 'none'
-          }}
-        >
-          <b>{t('login.register')}</b>
-        </Link>
+        <IconContainer>
+          <Link to="/register">
+            <FontAwesomeIcon icon={faUserPlus} color="#cccccc" size="3x" />
+          </Link>
+          <ClickableIcon
+            icon={faSignInAlt}
+            color="#cccccc"
+            size="3x"
+            onClick={() => signIn(username, password)}
+          />
+        </IconContainer>
       </ContentContainer>
     </ContentPage>
   );

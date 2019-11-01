@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Container from '../../../../components/container';
+import Container from '../container';
 
-const ProfileIconContainer = styled(Container)`
+const IconContainer = styled(Container)`
   display: flex;
   width: 100%;
   max-width: 400px;
@@ -9,4 +9,4 @@ const ProfileIconContainer = styled(Container)`
   justify-content: space-around;
 `;
 
-export default ProfileIconContainer;
+export default IconContainer;
