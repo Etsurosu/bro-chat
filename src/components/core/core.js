@@ -11,7 +11,7 @@ const Core = ({ children }) => {
   console.log(themeContext);
   return (
     <CoreContainer>
-      <Header isConnected />
+      <Header />
       <Body>{children}</Body>
     </CoreContainer>
   );

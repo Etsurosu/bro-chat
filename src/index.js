@@ -19,6 +19,9 @@ import Settings from './scenes/settings';
 const store = configureStore();
 const theme = configureTheme();
 
+console.log(store.getState());
+store.subscribe(() => console.log(store.getState()));
+
 render(
   <Router>
     <Provider store={store}>

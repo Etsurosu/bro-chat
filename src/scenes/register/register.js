@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { faUserCheck } from '@fortawesome/free-solid-svg-icons';
 import ClickableIcon from '../../components/clickable-icon';
@@ -8,12 +8,25 @@ import BroInput from '../../components/bro-input';
 
 const Register = () => {
   const { t } = useTranslation();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <ContentPage title={t('register.title')}>
       <ContentContainer>
-        <BroInput label={t('register.username')} placeholder={t('register.username')} />
-        <BroInput label={t('register.password')} placeholder={t('register.password')} />
+        <BroInput
+          label={t('login.username')}
+          placeholder={t('login.username')}
+          value={username}
+          onChangeText={setUsername}
+        />
+        <BroInput
+          type="password"
+          label={t('login.password')}
+          placeholder={t('login.password')}
+          value={password}
+          onChangeText={setPassword}
+        />
         <ClickableIcon
           icon={faUserCheck}
           color="#cccccc"
