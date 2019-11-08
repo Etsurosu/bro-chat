@@ -1,15 +1,14 @@
 import { connect } from 'react-redux';
 import signInActions from '../../redux/reducers/sign-in/sign-in-actions';
-import SignIn from './sign-in';
+import Register from './register';
 
 const mapDispatchToProps = dispatch => ({
-  signIn: payload => dispatch(signInActions.signInRequest(payload)),
   signInSuccess: payload => dispatch(signInActions.signInSuccess(payload))
 });
 
-const SignInContainer = connect(
+const RegisterContainer = connect(
   null,
   mapDispatchToProps
-)(SignIn);
+)(Register);
 
-export default SignInContainer;
+export default RegisterContainer;

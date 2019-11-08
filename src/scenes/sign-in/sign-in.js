@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeContext } from 'styled-components';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,11 +11,25 @@ import ClickableIcon from '../../components/clickable-icon';
 import ContentPage from '../../components/content-page';
 import BroInput from '../../components/bro-input';
 
-const SignIn = ({ signIn }) => {
+const SignIn = ({ signIn, signInSuccess }) => {
   const { t } = useTranslation();
   const { quaternaryColor } = useContext(ThemeContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
+  const signInRequest = () => {
+    axios({
+      method: 'post',
+      url: 'http://92.222.92.112:8000/api/auth/login',
+      responseType: 'json',
+      data: { user: { pseudo: username, password } }
+    })
+      .then(res => {
+        localStorage.setItem('token', res.data.user.token);
+        signInSuccess();
+      })
+      .catch(err => console.log(err));
+  };
 
   return (
     <ContentPage title={t('login.title')}>
@@ -39,7 +54,7 @@ const SignIn = ({ signIn }) => {
           icon={faSignInAlt}
           color={quaternaryColor}
           size="3x"
-          onClick={() => signIn(username, password)}
+          onClick={() => signInRequest(username, password)}
         />
       </IconContainer>
     </ContentPage>
@@ -47,7 +62,8 @@ const SignIn = ({ signIn }) => {
 };
 
 SignIn.propTypes = {
-  signIn: PropTypes.func.isRequired
+  signIn: PropTypes.func.isRequired,
+  signInSuccess: PropTypes.func.isRequired
 };
 
 export default SignIn;
