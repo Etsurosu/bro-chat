@@ -1,3 +1,3 @@
-import CoreContainer from "./core-container";
+import CoreContainer from './core-container';
 
 export default CoreContainer;

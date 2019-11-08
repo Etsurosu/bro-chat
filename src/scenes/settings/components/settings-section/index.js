@@ -1,3 +1,3 @@
-import SettingsSection from "./settings-section";
+import SettingsSection from './settings-section';
 
 export default SettingsSection;

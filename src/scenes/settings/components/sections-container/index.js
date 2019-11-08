@@ -1,3 +1,3 @@
-import SectionsContainer from "./sections-container";
+import SectionsContainer from './sections-container';
 
 export default SectionsContainer;

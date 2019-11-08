@@ -1,3 +1,3 @@
-import Register from "./register";
+import RegisterContainer from './register-container';
 
-export default Register;
+export default RegisterContainer;

@@ -1,3 +1,3 @@
-import BroInput from "./bro-input";
+import BroInput from './bro-input';
 
 export default BroInput;

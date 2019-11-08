@@ -1,11 +1,11 @@
-import styled from "styled-components";
-import Container from "../../../../components/container";
+import styled from 'styled-components';
+import Container from '../../../../components/container';
 
 const InputContainer = styled(Container)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: grey;
+  background-color: ${props => props.theme.tertiaryColor};
   padding: 7px 20px 7px 20px;
 `;
 

@@ -1,3 +1,3 @@
-import SectionOption from "./section-option";
+import SectionOption from './section-option';
 
 export default SectionOption;
