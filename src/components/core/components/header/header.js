@@ -7,24 +7,24 @@ import HeaderContainer from './components/header-container';
 import HeaderSection from './components/header-section';
 
 const Header = ({ isConnected }) => {
-  const theme = useContext(ThemeContext);
-  console.log('isConnected:' + isConnected);
+  const { primaryColor } = useContext(ThemeContext);
+
   return (
     <HeaderContainer>
-      <HeaderSection to="/" color={theme.primaryColor}>
+      <HeaderSection to="/" color={primaryColor}>
         <b>BROCHAT</b>
       </HeaderSection>
       {(isConnected && (
         <HeaderSection to="/me">
-          <FontAwesomeIcon icon={faUserAlt} color={theme.primaryColor} size="3x" />
+          <FontAwesomeIcon icon={faUserAlt} color={primaryColor} size="3x" />
         </HeaderSection>
       )) || (
         <HeaderSection to="/signin">
-          <FontAwesomeIcon icon={faSignInAlt} color={theme.primaryColor} size="3x" />
+          <FontAwesomeIcon icon={faSignInAlt} color={primaryColor} size="3x" />
         </HeaderSection>
       )}
       <HeaderSection to="/settings" style={{ position: 'absolute', bottom: 0 }}>
-        <FontAwesomeIcon icon={faCog} color={theme.primaryColor} size="3x" />
+        <FontAwesomeIcon icon={faCog} color={primaryColor} size="3x" />
       </HeaderSection>
     </HeaderContainer>
   );

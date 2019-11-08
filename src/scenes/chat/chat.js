@@ -15,11 +15,11 @@ import MessageContainer from './components/message-container';
 
 const Chat = () => {
   const username = 'Adri';
-  const theme = useContext(ThemeContext);
+  const { secondaryColor } = useContext(ThemeContext);
   const [inputText, setText] = useState('');
   const [messages, setMessages] = useState([]);
   const [isColorpickerShowed, setColorpickerState] = useState(false);
-  const [color, setColor] = useState(theme.secondaryColor);
+  const [color, setColor] = useState(secondaryColor);
 
   function handleSubmit() {
     if (inputText !== '') {

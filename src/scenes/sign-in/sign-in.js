@@ -12,7 +12,7 @@ import BroInput from '../../components/bro-input';
 
 const SignIn = ({ signIn }) => {
   const { t } = useTranslation();
-  const theme = useContext(ThemeContext);
+  const { quaternaryColor } = useContext(ThemeContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -33,11 +33,11 @@ const SignIn = ({ signIn }) => {
       />
       <IconContainer>
         <Link to="/register">
-          <FontAwesomeIcon icon={faUserPlus} color={theme.secondaryBackground} size="3x" />
+          <FontAwesomeIcon icon={faUserPlus} color={quaternaryColor} size="3x" />
         </Link>
         <ClickableIcon
           icon={faSignInAlt}
-          color={theme.secondaryBackground}
+          color={quaternaryColor}
           size="3x"
           onClick={() => signIn(username, password)}
         />

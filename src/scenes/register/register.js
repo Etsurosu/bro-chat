@@ -8,7 +8,7 @@ import BroInput from '../../components/bro-input';
 
 const Register = () => {
   const { t } = useTranslation();
-  const theme = useContext(ThemeContext);
+  const { quaternaryColor } = useContext(ThemeContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -29,7 +29,7 @@ const Register = () => {
       />
       <ClickableIcon
         icon={faUserCheck}
-        color={theme.secondaryBackground}
+        color={quaternaryColor}
         size="3x"
         onClick={() => console.log('registerRequest')}
       />

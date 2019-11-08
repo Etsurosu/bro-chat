@@ -7,7 +7,7 @@ const HeaderContainer = styled(Container)`
   align-items: center;
   width: 100px;
   height: 100%;
-  background-color: ${props => props.theme.secondaryColor};
+  background-color: ${props => props.theme.tertiaryColor};
 `;
 
 export default HeaderContainer;

@@ -10,9 +10,6 @@ import Root from './root-container';
 
 const store = configureStore();
 
-console.log('store getstate: ' + JSON.stringify(store.getState()));
-store.subscribe(() => console.log(store.getState()));
-
 render(
   <Provider store={store}>
     <Root />

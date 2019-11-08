@@ -7,9 +7,9 @@ const ContentPageContainer = styled(Container)`
   width: 70%;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.theme.secondaryBackground};
+  background-color: ${props => props.theme.quaternaryColor};
   border-radius: 30px;
-  border: 2px solid ${props => props.theme.border}
+  border: 2px solid ${props => props.theme.tertiaryColor}
   overflow: hidden;
   color: ${props => props.theme.secondaryColor};
 `;

@@ -5,7 +5,7 @@ const InputContainer = styled(Container)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${props => props.theme.chatInputContainerBackground};
+  background-color: ${props => props.theme.tertiaryColor};
   padding: 7px 20px 7px 20px;
 `;
 

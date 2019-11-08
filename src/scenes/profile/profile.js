@@ -12,7 +12,7 @@ import BroInput from '../../components/bro-input';
 
 const Auth = ({ defaultUsername = 'Adrien', defaultPassword = 'test', signOut }) => {
   const { t } = useTranslation();
-  const theme = useContext(ThemeContext);
+  const { quaternaryColor } = useContext(ThemeContext);
   const [username, setUsername] = useState(defaultUsername);
   const [password, setPassword] = useState(defaultPassword);
   const [editModeDisabled, setEditModeDisabled] = useState(true);
@@ -39,13 +39,13 @@ const Auth = ({ defaultUsername = 'Adrien', defaultPassword = 'test', signOut })
           <>
             <ClickableIcon
               icon={faUserEdit}
-              color={theme.secondaryBackground}
+              color={quaternaryColor}
               size="3x"
               onClick={() => setEditModeDisabled(false)}
             />
             <ClickableIcon
               icon={faSignOutAlt}
-              color={theme.secondaryBackground}
+              color={quaternaryColor}
               size="3x"
               onClick={() => signOut()}
             />
@@ -53,7 +53,7 @@ const Auth = ({ defaultUsername = 'Adrien', defaultPassword = 'test', signOut })
         )) || (
           <ClickableIcon
             icon={faUserCheck}
-            color={theme.secondaryBackground}
+            color={quaternaryColor}
             size="3x"
             onClick={() => setEditModeDisabled(true)}
           />

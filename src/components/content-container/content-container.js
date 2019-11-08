@@ -9,7 +9,7 @@ const ContentContainer = styled(Container)`
   width: 80%;
   height: 100%;
   padding: 20px 10% 30px 10%;
-  background-color: ${props => props.theme.primaryBackground};
+  background-color: ${props => props.theme.primaryColor};
 `;
 
 export default ContentContainer;

@@ -8,7 +8,7 @@ const MessageContainer = styled(Container)`
   border-radius: 12px;
   margin: 1px;
   word-wrap: break-word;
-  background-color: #cccccc;
+  background-color: ${props => props.theme.quaternaryColor};
   color: ${props => props.color};
 `;
 
