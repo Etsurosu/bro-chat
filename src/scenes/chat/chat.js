@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { ThemeContext } from 'styled-components';
 import { HuePicker } from 'react-color';
 import { faPalette, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import ClickableIcon from '../../components/clickable-icon';
@@ -14,10 +15,11 @@ import MessageContainer from './components/message-container';
 
 const Chat = () => {
   const username = 'Adri';
+  const theme = useContext(ThemeContext);
   const [inputText, setText] = useState('');
   const [messages, setMessages] = useState([]);
   const [isColorpickerShowed, setColorpickerState] = useState(false);
-  const [color, setColor] = useState('#333333');
+  const [color, setColor] = useState(theme.secondaryColor);
 
   function handleSubmit() {
     if (inputText !== '') {

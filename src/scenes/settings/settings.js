@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import ContentPage from '../../components/content-page';
 import SectionsContainer from './components/sections-container';
@@ -6,7 +7,7 @@ import SettingsSection from './components/settings-section';
 
 /** make it wirk nicely i18n + redux */
 
-const Settings = () => {
+const Settings = ({ setTheme, currentTheme }) => {
   const { t, i18n } = useTranslation();
 
   return (
@@ -35,20 +36,25 @@ const Settings = () => {
             {
               key: 'default',
               optionTitle: t('settings.default'),
-              checked: true,
-              onClick: () => console.log('bleu')
+              checked: currentTheme === 'default',
+              onClick: () => setTheme('default')
             },
             {
               key: 'dark',
               optionTitle: t('settings.dark'),
-              checked: false,
-              onClick: () => console.log('rouge')
+              checked: currentTheme === 'dark',
+              onClick: () => setTheme('dark')
             }
           ]}
         />
       </SectionsContainer>
     </ContentPage>
   );
+};
+
+Settings.propTypes = {
+  setTheme: PropTypes.func.isRequired,
+  currentTheme: PropTypes.string.isRequired
 };
 
 export default Settings;

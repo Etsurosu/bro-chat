@@ -7,10 +7,11 @@ const ContentPageContainer = styled(Container)`
   width: 70%;
   justify-content: center;
   align-items: center;
-  background-color: #cccccc;
+  background-color: ${props => props.theme.secondaryBackground};
   border-radius: 30px;
-  border: 2px solid #666666
+  border: 2px solid ${props => props.theme.border}
   overflow: hidden;
+  color: ${props => props.theme.secondaryColor};
 `;
 
 export default ContentPageContainer;

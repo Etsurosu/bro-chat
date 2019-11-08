@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const SectionTitle = styled.h2`
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid ${props => props.theme.primaryColor};
 `;
 
 export default SectionTitle;
